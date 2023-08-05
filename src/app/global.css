@@ -1,0 +1,155 @@
+body {
+  margin: 0px;
+  line-height: 1.5
+} 
+
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 800px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #595959;
+}
+
+.header h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+.header h2 {
+    font-size: 40px;
+}
+
+.mags {
+  display: flex;
+  flex-direction: row;
+}
+
+.mag {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("./magazine.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 30%;
+  margin: 80px 3.25%;
+  padding: 3px 8px;
+  padding-left: 15px;
+  height: 700px;
+  color: white;
+  font-weight: bolder;
+  position: relative;
+}
+
+.mag h2 {
+  text-align: center;
+}
+
+.mag p {
+  position: absolute;
+  bottom: 10px;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 850px;
+  position: relative;
+}
+
+.event {
+  background-color: #404040;
+  margin: 20px 250px;
+  padding: 3px 10px;
+  color: white;
+  border-radius: 3px;
+  width: 700px;
+  transition: z-index 0.3s;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+event:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.25);
+}
+
+.event1 {
+  position: absolute;
+  right: 0;
+  margin-top: 155px;
+}
+.event3 {
+  position: absolute;
+  right: 0;
+  margin-top: 450px;
+}
+
+.event p {
+  font-size: 14px;
+}
+
+.top {
+  z-index: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.presidents {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.president {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 100px;
+  pointer-events: none;
+}
+
+.Vanna {
+  margin-left: 300px;
+  margin-top: -400px;
+}
+
+.imagecontainer {
+  transition: transform .1s;
+  background-color: #262626;
+  width: 500px;
+  height: 600px;
+  border-radius: 3px;
+  pointer-events: all;
+}
+
+.imagecontainer:hover {
+  transform: scale(1.02);
+}
+
+.president img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 50px;
+  border-radius: 20px;
+}
+
+.description {
+  margin-left: 200px;
+  background-color: #404040;
+  padding: 40px;
+  color: white;
+  margin-right: 30px;
+  border-radius: 8px;
+}
+
+.Cayladescription {
+  margin-left: 290px;
+}
+
+.description p {
+  max-width: 700px;
+}
