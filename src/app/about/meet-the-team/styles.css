@@ -1,0 +1,64 @@
+
+.top {
+  z-index: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.presidents {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.president {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 100px;
+  pointer-events: none;
+}
+
+.Vanna {
+  margin-left: 300px;
+  margin-top: -400px;
+}
+
+.imagecontainer {
+  transition: transform .1s;
+  background-color: #262626;
+  width: 500px;
+  height: 600px;
+  border-radius: 3px;
+  pointer-events: all;
+}
+
+.imagecontainer:hover {
+  transform: scale(1.02);
+}
+
+.president img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 50px;
+  border-radius: 20px;
+}
+
+.description {
+  margin-left: 200px;
+  background-color: #404040;
+  padding: 40px;
+  color: white;
+  margin-right: 30px;
+  border-radius: 8px;
+}
+
+.Cayladescription {
+  margin-left: 290px;
+}
+
+.description p {
+  max-width: 700px;
+}
+
