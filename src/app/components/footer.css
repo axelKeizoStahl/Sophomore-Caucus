@@ -1,0 +1,22 @@
+.footer {
+  background-color: #404040;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+}
+
