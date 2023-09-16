@@ -15,8 +15,8 @@
 }
 
 .navbar a {
-  font-size: 16px;
-  color: white;
+  font-size: 20px;
+  color: black;
   text-decoration: none;
   padding: 10px 16px;
   margin: 0; /* Reset margin */
@@ -37,8 +37,7 @@ ul {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;
-  color: white;
+  font-size: 20px;
   padding: 10px 16px;
   background-color: transparent;
   border: none;

@@ -15,9 +15,9 @@
 }
 
 .presidents h1 {
-  font-size: 50px;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  font-size: 70px;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 
 .president {
@@ -76,7 +76,7 @@
 }
 
 .departments h1 {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .departments-container {
@@ -88,7 +88,7 @@
 }
 
 .department {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
   background-image:  linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ), url("../../aboutus-replace.jpg");
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   width: 300px;

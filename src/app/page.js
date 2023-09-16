@@ -6,7 +6,7 @@ import { useState } from 'react'
 export default function Home() {
   const [isTop, setIsTop] = useState(2)
 
-  var magazine = 
+  var magazine =
     {title: "Coming Soon",
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Fermentum posuere urna nec tincidunt praesent. Curabitur gravida arcu ac tortor dignissim. Odio eu feugiat pretium nibh ipsum consequat nisl. Eu tincidunt tortor aliquam nulla. Auctor neque vitae tempus quam pellentesque nec nam aliquam.",
     }
@@ -47,13 +47,13 @@ export default function Home() {
           />
           <div>
             <h1>Sophomore Caucus</h1>
-            <h2>Class of '26</h2>
+            <h2>2024</h2>
           </div>
         </div>
       </div>
       <div className='body'>
         <div className='news'>
-            <div className='mag'  >
+            <div className='mag'>
               <h2>{magazine.title}</h2>
               <p>{magazine.info}</p>
             </div>
@@ -69,7 +69,7 @@ export default function Home() {
         <div className='opportunities'>
           <h1>Upcoming Opportunities</h1>
           {opportunities.slice(0, 3).map((opportunity, index) => (
-            <div className='opportunity'>
+            <div key={`opportunity${index+1}`} className='opportunity'>
               <h2>{opportunity.title}</h2>
               <p>{opportunity.info}</p>
               <small>deadline: <span>{opportunity.time}</span></small>

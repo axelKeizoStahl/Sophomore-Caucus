@@ -4,6 +4,7 @@ import Vanna from '../../images/Vanna.jpg'
 import Cayla from '../../images/Cayla.jpg'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Page() {
   const [presTop, setPresTop] = useState("Cayla")
@@ -34,7 +35,7 @@ export default function Page() {
   return (
     <div className="meet-the-team">
       <div className="header">
-        <h1>Meet the Team</h1>
+        <h1>About-Us</h1>
       </div>
       <div className='presidents'>
         <h1>Presidents</h1>
@@ -59,9 +60,9 @@ export default function Page() {
         <h1>Departments</h1>
         <div className='departments-container'>
           {departments.map((department, index) => (
-            <div className={`department ${department.name} department${index+1}`} key={index}>
+            <Link href={`/about/about-us/${department.department.toLowerCase()}`} className={`department ${department.name} department${index+1}`} key={index}>
               <h3>{department.department}</h3>
-            </div>
+            </Link>
           )
           )}
         </div>
