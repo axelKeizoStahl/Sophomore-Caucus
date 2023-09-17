@@ -1,5 +1,8 @@
+import './styles.css'
+import Link from 'next/link'
+
 export default function Page() {
-  events = [
+  var events = [
     {
       title: "Event 1",
       date: "2021-01-01",
@@ -33,14 +36,19 @@ export default function Page() {
     <div className="upcoming-events">
       <div className="header">
         <h1>Upcoming Events</h1>
+        <Link className="past-events-link" href="/news/events/past-events"><p>Past Events</p></Link>
       </div>
-    <div className="events">
-      {events.map((event, index) => (
-        <div className={`event event${index}`} key={index}>
+        <div className="events">
+          {events.map((event, index) => (
+            <div className={`event event${index}`} key={index}>
+                <h2>{event.title}</h2>
+                <h3>{event.date} at {event.time}</h3>
+                <h3>{event.location}</h3>
+                <p>{event.description}</p>
+            </div>
+            )
+          )}
         </div>
-        )
-      )}
-    </div>
     </div>
   )
 }

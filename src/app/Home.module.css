@@ -1,9 +1,3 @@
-body {
-  margin: 0px;
-  line-height: 1.5;
-  background-color: #e5e5e5;
-}
-
 .body {
   margin: 10px 12.5%;
   width: 75%;
@@ -20,7 +14,7 @@ body {
 .header {
   display: flex;
   flex-direction: row;
-  height: 1000px;
+  height: 100vh;
   width: 100%;
   justify-content: center;
   background: #595959;
@@ -78,6 +72,7 @@ body {
   height: 100%;
   width: 100%;
   margin-bottom: 50px;
+  margin-left: 100px;
 }
 
 .mag {
@@ -117,7 +112,7 @@ body {
   margin-top: 65px;
   gap: 20px;
   position: absolute;
-  left: 650px;
+  left: 800px;
 }
 
 .event {
@@ -133,7 +128,7 @@ body {
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-event:hover {
+.event:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transform: scale(1.25);
 }
@@ -146,7 +141,7 @@ event:hover {
   background-color: #595959;
   padding: 10px 30px;
   width: 1000px;
-  margin: 100px 30px;
+  margin: 300px 30px;
   position: absolute;
   top: 1600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

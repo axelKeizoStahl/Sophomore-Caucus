@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import logo from './logo.png'
 import { useState } from 'react'
+import styles from './Home.module.css'
 
 export default function Home() {
   const [isTop, setIsTop] = useState(2)
@@ -36,9 +37,9 @@ export default function Home() {
   ]
 
   return (
-    <div className='Home'>
-      <div className='header'>
-        <div className='container'>
+    <div className={styles.Home}>
+      <div className={styles.header}>
+        <div className={styles.container}>
           <Image
           src={logo}
           width={200}
@@ -51,25 +52,25 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='body'>
-        <div className='news'>
-            <div className='mag'>
+      <div className={styles.body}>
+        <div className={styles.news}>
+            <div className={styles.mag}>
               <h2>{magazine.title}</h2>
               <p>{magazine.info}</p>
             </div>
-          <div className='events'>
+          <div className={styles.events}>
           {events.slice(0, 2).map((eventitem, index)=>(
-            <div key={`event${index+1}`} className={`event event${index+1} ${isTop == index + 1 ? 'top' : ''}`} onMouseOver={() => setIsTop(index+1)} >
+            <div key={`event${index+1}`} className={`${styles.event} ${styles[`event${index+1}`]} ${isTop == index + 1 ? styles.top : ''}`} onMouseOver={() => setIsTop(index+1)} >
               <h2>{eventitem.title}</h2>
               <p>{eventitem.info}</p>
             </div>
           ))}
           </div>
         </div>
-        <div className='opportunities'>
+        <div className={styles.opportunities}>
           <h1>Upcoming Opportunities</h1>
           {opportunities.slice(0, 3).map((opportunity, index) => (
-            <div key={`opportunity${index+1}`} className='opportunity'>
+            <div key={`opportunity${index+1}`} className={styles.opportunity}>
               <h2>{opportunity.title}</h2>
               <p>{opportunity.info}</p>
               <small>deadline: <span>{opportunity.time}</span></small>
@@ -80,3 +81,4 @@ export default function Home() {
     </div>
   )
 }
+
