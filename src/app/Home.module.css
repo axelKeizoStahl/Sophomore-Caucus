@@ -69,10 +69,9 @@
 .news {
   display: flex;
   flex-direction: row;
-  height: 100%;
-  width: 100%;
-  margin-bottom: 50px;
-  margin-left: 100px;
+  position: absolute;
+  top: 110vh;
+  gap: 100px;
 }
 
 .mag {
@@ -81,14 +80,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 550px;
-  margin: 80px 3.25%;
-  margin-top: 50px;
   padding: 3px 8px;
-  padding-left: 15px;
   height: 550px;
   color: white;
   font-weight: bolder;
-  position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -99,8 +94,8 @@
 .mag p {
     font-size: 20px;
     font-weight: 500;
-    position: absolute;
-    bottom: 90px;
+    position: relative;
+    top: 50px;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -109,41 +104,43 @@
   display: flex;
   flex-direction: column;
   height: 850px;
-  margin-top: 65px;
   gap: 20px;
-  position: absolute;
-  left: 800px;
 }
 
 .event {
   background-color: #404040;
-  margin: 0 250px;
-  padding: 3px 10px;
+  padding: 5px 10px;
   color: white;
   border-radius: 3px;
-  width: 700px;
+  width: 400px;
   transition: z-index 0.3s;
   height: 250px;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.event:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transform: scale(1.25);
+
+.event h2 {
+  text-align: center;
 }
 
 .event p {
-  font-size: 14px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.event small {
+  color: red;
+  position: relative;
+  top: 50px;
 }
 
 .opportunities {
   background-color: #595959;
   padding: 10px 30px;
   width: 1000px;
-  margin: 300px 30px;
-  position: absolute;
-  top: 1600px;
+  position: relative;
+  top: 30vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
 }
@@ -163,6 +160,17 @@
 .opportunity:hover {
   transform: scale(1.1);
   border-radius: 3px;
+  font-size: 20px;
+}
+
+.opportunity p {
+  transition: all 0.3s ease;
+}
+
+.opportunity p:hover {
+  font-size: 16px;
+  padding: 0 10px;
+  font-weight: bolder;
 }
 
 .opportunity span {

@@ -14,10 +14,12 @@ export default function Home() {
 
   var events = [
     {title: "Lorum Ipsum",
-      info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Fermentum posuere urna nec tincidunt praesent. Curabitur gravida arcu ac tortor dignissim. Odio eu feugiat pretium nibh ipsum consequat nisl. Eu tincidunt tortor aliquam nulla. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Eget felis eget nunc lobortis mattis. Velit egestas dui id ornare. Condimentum lacinia quis vel eros donec.",
+      info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit.",
+      date: "March 23rd 2008",
     },
     {title: "Lorum Ipsum",
-      info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Fermentum posuere urna nec tincidunt praesent. Curabitur gravida arcu ac tortor dignissim. Odio eu feugiat pretium nibh ipsum consequat nisl. Eu tincidunt tortor aliquam nulla. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Eget felis eget nunc lobortis mattis. Velit egestas dui id ornare. Condimentum lacinia quis vel eros donec.",
+      info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit.",
+      date: "March 23rd 2008",
     },
   ]
 
@@ -63,6 +65,7 @@ export default function Home() {
             <div key={`event${index+1}`} className={`${styles.event} ${styles[`event${index+1}`]} ${isTop == index + 1 ? styles.top : ''}`} onMouseOver={() => setIsTop(index+1)} >
               <h2>{eventitem.title}</h2>
               <p>{eventitem.info}</p>
+              <small>{eventitem.date}</small>
             </div>
           ))}
           </div>
@@ -73,7 +76,7 @@ export default function Home() {
             <div key={`opportunity${index+1}`} className={styles.opportunity}>
               <h2>{opportunity.title}</h2>
               <p>{opportunity.info}</p>
-              <small>deadline: <span>{opportunity.time}</span></small>
+              <small>Deadline: <span>{opportunity.time}</span></small>
             </div>
           ))}
         </div>
