@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
       <div className="widgets">
-        <div className="event">
+        <div className="home-event">
           <h2>Upcoming Event</h2>
           <p> Vel turpis nunc eget lorem dolor sed viverra ipsum. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Mattis rhoncus urna neque viverra. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. Vitae semper quis lectus nulla at volutpat diam ut. Enim sed faucibus turpis in eu mi bibendum neque egestas.</p>
           <small>Event Date: 03/23/08</small>

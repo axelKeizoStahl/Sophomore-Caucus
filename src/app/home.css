@@ -90,7 +90,7 @@
   margin-top: 20px;
 }
 
-.event {
+.home-event {
   width: 500px;
   border: .1px dotted white;
   border-radius: 3px;
@@ -100,11 +100,11 @@
   transition: all 0.5s ease;
 }
 
-.event:hover {
+.home-event:hover {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.event h2 {
+.home-event h2 {
   font-size: 30px;
   margin: 0;
   font-weight: 400;

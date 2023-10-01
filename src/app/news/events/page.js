@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './styles.css'
 import Link from 'next/link'
 
 export default function Page() {
@@ -33,10 +33,10 @@ export default function Page() {
     },
   ]
   return (
-    <div className="upcoming-events">
+    <div className={styles.upcoming-events}>
         <h1>Upcoming Events</h1>
-        <Link className="past-events-link" href="/news/events/past-events"><p>Past Events</p></Link>
-        <div className="events">
+        <Link className={styles.past_events_link} href="/news/events/past-events"><p>Past Events</p></Link>
+        <div className={styles.events}>
           {events.map((event, index) => (
             <div className={`event event${index}`} key={index}>
                 <h2>{event.title}</h2>
