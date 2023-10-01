@@ -34,10 +34,8 @@ export default function Page() {
   ]
   return (
     <div className="upcoming-events">
-      <div className="header">
         <h1>Upcoming Events</h1>
         <Link className="past-events-link" href="/news/events/past-events"><p>Past Events</p></Link>
-      </div>
         <div className="events">
           {events.map((event, index) => (
             <div className={`event event${index}`} key={index}>
