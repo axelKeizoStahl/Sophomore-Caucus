@@ -12,6 +12,10 @@
   }
 }
 
+nextjs-portal {
+  display: none;
+}
+
 body {
   margin: 0px;
   line-height: 1.5;

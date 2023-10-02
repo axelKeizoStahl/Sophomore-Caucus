@@ -4,6 +4,8 @@ import Image from 'next/image'
 import logo from './logo.png'
 import './home.css'
 
+
+export const dynamic = "force-dynamic";
 export default function Home() {
   const scheduleInSeconds = [
     28800, 31260, 31500, 33960,
