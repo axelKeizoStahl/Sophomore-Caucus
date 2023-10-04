@@ -1,7 +1,33 @@
+.upcoming-events {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .7));
+  a {
+    color: white;
+    font-weight: 500;
+  }
+  .dropbtn {
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0,.7), rgba(0, 0, 0, .6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  position: sticky;
+  padding: 50px 100px;
+  margin-bottom: 50px;
+}
 .header h1 {
     font-size: 100px;
     text-align: center;
     align-self: center;
+    font-weight: 600;
 }
 
 .past_events_link {
@@ -15,10 +41,32 @@
     border-radius: 5px;
     box-shadow: 0 0 5px #ccc;
     font-size: 30px;
+    display:none ;
 }
 
 .events {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.event {
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(229, 170, 226, 0.5));
+  border-radius: 2px;
+  box-shadow: 0 0 5px #ccc;
+  text-align: center;
+  font-size: 30px;
+}
+.event:hover {
+  transform: scale(1.1);
+}
+
+.end-message {
+  font-size: 70px;
+  text-align: center;
+  width: 80%;
+  margin: 50px 10%;
+  font-weight: 500;
 }

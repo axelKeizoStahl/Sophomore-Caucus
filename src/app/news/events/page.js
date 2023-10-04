@@ -33,20 +33,21 @@ export default function Page() {
     },
   ]
   return (
-    <div className={styles.upcoming-events}>
+    <div className="upcoming-events">
+      <div className="header">
         <h1>Upcoming Events</h1>
-        <Link className={styles.past_events_link} href="/news/events/past-events"><p>Past Events</p></Link>
-        <div className={styles.events}>
+      </div>
+        <Link className="past_events_link" href="/news/events/past-events"><p>Past Events</p></Link>
+        <div className="events">
           {events.slice(0).reverse().map((event, index) => (
-            <div className={`event event${index}`} key={index}>
-              <div className={styles.event_icon}>
-                <h3>Event</h3>
-                <p>{event.date}</p>
-              </div>
+            <div className="event">
+              <h3>Event</h3>
+              <p>{event.date}</p>
             </div>
             )
           )}
         </div>
+        <h1 className="end-message">These Are all the events we have planned for now. Check back later for more!</h1>
     </div>
   )
 }
