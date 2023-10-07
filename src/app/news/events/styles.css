@@ -1,12 +1,21 @@
+.hide {
+  display: none;
+}
+
+.darken {
+  background: rgba(0, 0, 0, 0.3);
+}
 .upcoming-events {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
+  z-index: 1;
+  max-width: 100vw;
 }
 
 .navbar {
-  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .7));
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .0));
   a {
     color: white;
     font-weight: 500;
@@ -19,12 +28,17 @@
 
 .header {
   background: linear-gradient(rgba(0, 0, 0,.7), rgba(0, 0, 0, .6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-  position: sticky;
   padding: 50px 100px;
   margin-bottom: 50px;
+  width: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .header h1 {
-    font-size: 100px;
+    font-size: 120px;
     text-align: center;
     align-self: center;
     font-weight: 600;
@@ -58,9 +72,36 @@
   box-shadow: 0 0 5px #ccc;
   text-align: center;
   font-size: 30px;
+  box-shadow: 0 0 50px #ccc;
 }
 .event:hover {
   transform: scale(1.1);
+}
+
+.event-info {
+  background: rgba(229, 170, 226, 1);
+  opacity: 0.89;
+  z-index: 1;
+  position: fixed;
+  top: 10vh;
+  height: 80vh;
+  width: 1000px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 50px #ccc;
+  img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 .end-message {
@@ -69,4 +110,39 @@
   width: 80%;
   margin: 50px 10%;
   font-weight: 500;
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    padding: 50px 0;
+    flex-direction: column;
+  }
+  .header h1 {
+    font-size: 60px;
+  }
+  .past_events_link {
+    right: 0;
+    bottom: 0;
+    font-size: 20px;
+  }
+  .events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .event {
+    width: 200px;
+    height: 150px;
+    font-size: 20px;
+  }
+  .event-info {
+    width: 90%;
+    height: 80vh;
+    top: 10vh;
+    padding: 10px;
+    h1 {
+      font-size: 50px;
+    }
+  }
+  .end-message {
+    font-size: 30px;
+  }
 }
