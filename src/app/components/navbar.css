@@ -12,15 +12,16 @@
   padding-top: 20px;
   padding-left: 20px;
   font-weight: 400;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
 }
 
 .navbar a {
   font-size: 22px;
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 10px 16px;
   margin: 0; /* Reset margin */
-  font-weight: bold;
+  font-weight: 500;
 }
 
 ul {
@@ -34,10 +35,11 @@ ul {
 
 .dropdown {
   position: relative;
+  font-weight: 500;
 }
 
 .dropdown .dropbtn {
-  color: black;
+  color: white;
   font-size: 22px;
   padding: 10px 16px;
   background-color: transparent;
@@ -45,7 +47,7 @@ ul {
   outline: none;
   cursor: pointer;
   margin: 0; /* Reset margin */
-  font-weight: bolder;
+  font-weight: 500;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {

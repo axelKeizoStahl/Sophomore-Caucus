@@ -1,5 +1,5 @@
 "use client"
-import styles from './styles.css'
+import styles from './events.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
 import CloseIcon from '../../images/close-button-png-30242(1).png'
@@ -40,8 +40,8 @@ export default function Page() {
     },
   ]
   return (
-    <div className={`${typeof event_info_show!="string" ? "darken":""} upcoming-events`}>
-        <div className={`event-info ${typeof event_info_show=="string" ? "hide" : "show"}`}>
+    <div className={`${typeof event_info_show!="string" ? styles.darken:""} ${styles.upcoming_events}`}>
+        <div className={`${styles.event_info} ${typeof event_info_show=="string" ? styles.hide : ""}`}>
           <Image src={CloseIcon} alt="Close Icon" width="50" height="50" onClick={()=>{setEvent_info_show("1")}}/>
           <h1>{events[event_info_show].title}</h1>
           <p>{events[event_info_show].description}</p>
@@ -49,21 +49,21 @@ export default function Page() {
           <p>{events[event_info_show].location}</p>
           <p>{events[event_info_show].time}</p>
         </div>
-      <div className="header">
+      <div className={styles.header}>
         <Image src={Logo} alt="Logo" width="200" height="200"/>
-        <h1>Upcoming Events</h1>
+        <h1 className={styles.title}>Upcoming Events</h1>
       </div>
-        <Link className="past_events_link" href="/news/events/past-events"><p>Past Events</p></Link>
-        <div className="events">
+        <Link className={styles.past_events_link} href="/news/events/past-events"><p>Past Events</p></Link>
+        <div className={styles.events}>
           {events.slice(0).reverse().map((event, index) => (
-            <div className="event" key={index} onClick={()=>{setEvent_info_show(index)}}>
+            <div className={styles.event} key={index} onClick={()=>{setEvent_info_show(index)}}>
               <h3>{event.title}</h3>
               <p>{event.date}</p>
             </div>
             )
           )}
         </div>
-        <h1 className="end-message">These Are all the events we have planned for now. Check back later for more!</h1>
+        <h1 className={`${styles.end_message} ${styles.title}`}>These Are all the events we have planned for now. Check back later for more!</h1>
     </div>
   )
 }
