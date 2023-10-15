@@ -7,7 +7,7 @@ export default function Page() {
       </div>
       <div className={styles.mags}>
           {[1,2,3,4].map((i) => (
-            <iframe className={styles.mag} src={`/mag${i}.pdf`} height="600" width="600" />
+            <iframe className={styles.mag} src={`/mag${i}.pdf#toolbar=0`} height="600" width="600" frameborder="0" />
           ))}
       </div>
     </div>
