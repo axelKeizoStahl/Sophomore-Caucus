@@ -1,14 +1,9 @@
 .navbar {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.navbar a {
-  color: white;
-  font-weight: 500;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+    height: 67px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .dropdown .dropbtn {
@@ -22,6 +17,7 @@
   margin-top: 67px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   .title {
+    margin-top: 0;
     font-weight: 500;
   }
 }
@@ -32,7 +28,7 @@
   align-items: center;
   justify-items: center;
   margin-top: 70px;
-  gap: 20px;
+  gap: 90px;
   margin-bottom: 70px;
 }
 
@@ -43,4 +39,10 @@
   background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.1), rgba(229, 170, 226, 0.5));
 }
 
-
+.end_message {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 67px;
+  margin-bottom: 67px;
+  font-weight: 500;
+}

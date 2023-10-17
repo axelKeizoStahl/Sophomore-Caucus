@@ -63,6 +63,10 @@
   color: white;
 }
 
+.navbar {
+  background: transparent;
+}
+
 .navbar a {
   color: white;
 }
@@ -84,12 +88,12 @@
   border-radius: 3px;
   padding: 30px;
   font-size: 17px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
 }
 
 .home-event:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .home-event h2 {
@@ -107,13 +111,13 @@
   border: .1px dotted white;
   border-radius: 3px;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
   background: rgba(0, 0, 0, 0.7);
+  transition: all 0.5s ease;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .sched:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .period {
@@ -188,6 +192,7 @@
     .period {
       font-size: 40px;
     }
+    background: rgba(0, 0, 0, 0.7);
 
     transform: scale(0.9);
   }

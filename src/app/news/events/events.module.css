@@ -6,6 +6,14 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
+.navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+    height: 67px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .upcoming_events {
   justify-content: center;
   align-items: center;
@@ -23,16 +31,17 @@
   width: 100%;
   pointer-events: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .header .title {
+    margin-top: 0;
     font-size: 120px;
     text-align: center;
     align-self: center;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .past_events_link {

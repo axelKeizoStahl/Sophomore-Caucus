@@ -41,6 +41,7 @@ export default function Page() {
   ]
   return (
     <div className={`${typeof event_info_show!="string" ? styles.darken:""} ${styles.upcoming_events}`}>
+        <div className={styles.navbar}></div>
         <div className={`${styles.event_info} ${typeof event_info_show=="string" ? styles.hide : ""}`}>
           <Image src={CloseIcon} alt="Close Icon" width="50" height="50" onClick={()=>{setEvent_info_show("1")}}/>
           <h1>{events[event_info_show].title}</h1>
@@ -63,7 +64,7 @@ export default function Page() {
             )
           )}
         </div>
-        <h1 className={`${styles.end_message} ${styles.title}`}>These Are all the events we have planned for now. Check back later for more!</h1>
+        <h1 className={`${styles.end_message} ${styles.title}`}>These are all the events we have planned for now. Check back later for more!</h1>
     </div>
   )
 }
