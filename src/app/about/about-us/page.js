@@ -34,7 +34,6 @@ export default function Page() {
   ]
   return (
     <div className="meet-the-team">
-    <h1>About-Us</h1>
       <div className='presidents'>
         <h1>Presidents</h1>
         {presidents.map((president, index) => (
