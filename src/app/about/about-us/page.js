@@ -11,11 +11,11 @@ export default function Page() {
 
   var presidents = [
       {name: "Cayla",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Fermentum posuere urna nec tincidunt praesent. Curabitur gravida arcu ac tortor dignissim. Odio eu feugiat pretium nibh ipsum consequat nisl. Eu tincidunt tortor aliquam nulla. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Eget felis eget nunc lobortis mattis. Velit egestas dui id ornare. Condimentum lacinia quis vel eros donec.",
+        description: "Hey! My name is Cayla and I'm one of the Sophomore Caucus Co-Presidents. I lovee hanging out with friends and also taking naps (you'll probably catch both happening at the same time).  I also love to binge watch shows and draw in my free time. I'm really happy that Vanna and I get the chance to work together again, and bring you the best we can!! Hopefully, we won't dissapoint!",
         image: Cayla
       },
       {name: "Vanna",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Fermentum posuere urna nec tincidunt praesent. Curabitur gravida arcu ac tortor dignissim. Odio eu feugiat pretium nibh ipsum consequat nisl. Eu tincidunt tortor aliquam nulla. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Eget felis eget nunc lobortis mattis. Velit egestas dui id ornare. Condimentum lacinia quis vel eros donec.",
+        description: "Hi! I'm Vanna and I enjoy spending my free time reading webtoons or playing games. I tend to be organized unless I'm lazy and I have a lot of stuffed animals! I hate food. As Co-Presidents, we work together with administration, our directors, and members to execute policies and events.",
         image: Vanna
       }
   ]
