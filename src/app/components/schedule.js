@@ -5,76 +5,89 @@ import { i18n } from '../../../next.config';
 export const dynamic = "force-dynamic";
 export default function Home() {
   const [timer, setTimer] = useState(new Date().getHours()*3600 + new Date().getMinutes()*60);
+  let working_sched = optimizedBellSchedules.find(schedule => schedule.name == "Regular").schedule
   const [currpd, setCurrPd] = useState(()=>{
-    let working_sched = optimizedBellSchedules['Regular']
+    console.log(working_sched)
     let low = 0
     let top = 19
     let mid = 9
 
     if (timer < working_sched[0].start) { return "Before School" }
-    else if (timer > working_sched[0].start) { return "After School" }
+    else if (timer > working_sched[9].end) { return "After School" }
 
     while (top - low > 1) {
-      current_pd = working_sched[floor(mid/2)]
-      mid_time = current_pd[mid%2 + 1]
+      let current_pd = working_sched[Math.floor(mid/2)]
+      if (mid%2 == 0) {
+        var mid_time = current_pd.start;
+      } else {
+        var mid_time = current_pd.end;
+      }
+
       if (mid_time == timer) {
         return current_pd.pd
       } else if (mid_time > timer) {
         top = mid
-        mid = floor((low + high) / 2);
+        mid = Math.floor((low + top) / 2);
       } else {
         low = mid
-        mid = floor((low + high) / 2);
+        mid = Math.floor((low + top) / 2);
       }
     }
     if (low % 2 == 0) {
       return low / 2 + 1
     } else {
-      return floor(low / 2) + 1
+      return Math.floor(low / 2) + 1
     }
   });
 
   const [min, setMin] = useState(()=>{
-    let working_sched = optimizedBellSchedules['homeroom']
-    let sec_from_start = timer - working_sched[currpd - 1].start
-    return floor(sec_from_start / 60)
+    if (typeof(currpd) == 'string') { return currpd.split(' ')}
+    else {
+      let sec_from_start = timer - working_sched[currpd - 1].start;
+      let sec_to_end = working_sched[currpd - 1].end - timer;
+      return [Math.floor(sec_from_start / 60), Math.floor(sec_to_end / 60)]
+    }
   });
 
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (timer > 0) {
-        setTimer(prevTimer => prevTimer - 1);
-      } else {
-        setTimer(60);
-        if (scheduleInSeconds.includes(new Date().getHours()*3600 + new Date().getMinutes()*60)) {
-          setMin(0);
-          setPd(pd => {
-            if (pd === "After School") {
-              return "Before School";
-            } else if (pd === "Before School") {
-              return "1"
-            } else {
-              return `${(parseInt(pd)+0.5)}`;
-            }
-          })
-        } else {
-          setMin(min + 1);
+      setTimer(timer + 1);
+      let away_from_min = timer % 60
+      if (away_from_min == 0) {
+        if (typeof(currpd) == 'string') {
+          if (timer > 86400) {
+            setTimer(0)
+            setMin(['Before', 'School'])
+            setCurrPd('Before School')
+          }
+        }
+        else if (working_sched[currpd - 1].end < timer) {
+          if (currpd == 10) {
+            setCurrPd("After School");
+            setMin(['After', 'School']);
+          } else {
+            setCurrPd(currpd + 1)
+            setMin([0, Math.floor((working_sched[currpd - 1].end - timer) / 60)])
+          }
+        }
+        else if (typeof(currpd) != 'string') {
+          setMin(min + 1)
         }
       }
+
+
     }, 1000);
 
     return () => clearInterval(interval);
   }, [timer]);
   return (
         <div className="sched">
-          <div className="period">{pd}</div>
-          <div className="time">
-            <div className="min min-don">{min}</div>
-            <div className="min min-to">{`${pd == "Before School" ? `${28800-min}`:
-               pd === "After School" ? `${30300/60-min}`:
-              `${(scheduleInSeconds[parseInt(pd)*2+1]-scheduleInSeconds[parseInt(pd)*2])/60-min}`
-            }`}</div>
+          <div className="period">{currpd}</div>
+          <div className={`${typeof(currpd) == 'string' ? 'col' :''} timer`}>
+            <div className="min min-don">{min[0]}</div>
+            <p className={`${typeof(currpd) == 'string' ? 'hide' : 'sec'}`}>{60 - (timer % 60)}</p>
+            <div className="min min-to">{min[1]}</div>
           </div>
         </div>
   )

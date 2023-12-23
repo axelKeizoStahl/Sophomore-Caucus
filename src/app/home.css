@@ -134,8 +134,9 @@
   top: 20px;
 }
 
-.min {
-  font-size: 80px;
+.col {
+  flex-direction: column;
+  font-size: 60px;
 }
 
 .min-don {
@@ -144,6 +145,10 @@
 
 .min-to {
   color: red;
+}
+
+.hide {
+  display: none;
 }
 
 @media screen and (max-width: 1000px) {
