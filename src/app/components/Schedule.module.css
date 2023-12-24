@@ -37,6 +37,10 @@
   font-weight: 400;
 }
 
+.min {
+  font-size: 80px;
+}
+
 .minDon {
   color: green;
 }

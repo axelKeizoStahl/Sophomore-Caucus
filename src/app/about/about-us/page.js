@@ -1,5 +1,5 @@
 "use client"
-import './styles.css'
+import styles from './aboutus.module.css'
 import Vanna from '../../images/Vanna.jpg'
 import Cayla from '../../images/Cayla.jpg'
 import { useState } from 'react'
@@ -33,12 +33,12 @@ export default function Page() {
       photo: "../../images/",},
   ]
   return (
-    <div className="meet-the-team">
-      <div className='presidents'>
+    <div>
+      <div className={styles.presidents}>
         <h1>Presidents</h1>
         {presidents.map((president, index) => (
-          <div key={`president${index+1}`} className={`${president.name} president ${presTop == president.name ? 'top' : ''}`} >
-            <div className={`imagecontainer ${president.name}image`}onClick={() => setPresTop(president.name)}>
+          <div key={`president${index+1}`} className={`${president.name == 'Vanna' ? styles.Vanna : ''} ${styles.president} ${presTop == president.name ? styles.top : ''}`} >
+            <div className={`${styles.imagecontainer} ${president.name == 'Vanna' ? styles.Vanna : ''}`} onClick={() => setPresTop(president.name)}>
               <Image
                 src={president.image}
                 width={400}
@@ -46,18 +46,18 @@ export default function Page() {
                 alt={president.name}
               />
             </div>
-            <div className={`${president.name}description description ${presTop != president.name ? 'hidden': ''}`}>
+            <div className={`${president.name == 'Cayla' ? styles.Cayladescription : ''} ${styles.description} ${presTop != president.name ? styles.hidden: ''}`}>
               <h2>{president.name}</h2>
               <p>{president.description}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className='departments'>
+      <div className={styles.departments}>
         <h1>Departments</h1>
-        <div className='departments-container'>
+        <div className={styles.departmentsContainer}>
           {departments.map((department, index) => (
-            <Link href={`/about/about-us/${department.department.toLowerCase()}`} className={`department ${department.name} department${index+1}`} key={index}>
+            <Link href={`/about/about-us/${department.department.toLowerCase()}`} className={styles.department} key={index}>
               <h3>{department.department}</h3>
             </Link>
           )
