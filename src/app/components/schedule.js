@@ -8,7 +8,6 @@ export default function Home() {
   const [timer, setTimer] = useState(new Date().getHours()*3600 + new Date().getMinutes()*60);
   let working_sched = optimizedBellSchedules.find(schedule => schedule.name == "Regular").schedule
   const [currpd, setCurrPd] = useState(()=>{
-    console.log(working_sched)
     let low = 0
     let top = 19
     let mid = 9
