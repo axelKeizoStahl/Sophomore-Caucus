@@ -1,4 +1,5 @@
 "use client";
+import styles from './Schedule.module.css'
 import { useState, useEffect } from 'react';
 import { i18n } from '../../../next.config';
 
@@ -82,12 +83,12 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [timer]);
   return (
-        <div className="sched">
-          <div className="period">{currpd}</div>
-          <div className={`${typeof(currpd) == 'string' ? 'col' :''} timer`}>
-            <div className="min min-don">{min[0]}</div>
-            <p className={`${typeof(currpd) == 'string' ? 'hide' : 'sec'}`}>{60 - (timer % 60)}</p>
-            <div className="min min-to">{min[1]}</div>
+        <div className={styles.sched}>
+          <div className={styles.period}>{currpd}</div>
+          <div className={`${typeof(currpd) == 'string' ? styles.col :''} ${styles.time}`}>
+            <div className={`${styles.min} ${styles.minDon}`}>{min[0]}</div>
+            <p className={`${typeof(currpd) == 'string' ? styles.hide : styles.sec}`}>{60 - (timer % 60)}</p>
+            <div className={`${styles.min} ${styles.minTo}`}>{min[1]}</div>
           </div>
         </div>
   )

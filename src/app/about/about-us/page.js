@@ -15,7 +15,7 @@ export default function Page() {
         image: Cayla
       },
       {name: "Vanna",
-        description: "Hi! I'm Vanna and I enjoy spending my free time reading webtoons or playing games. I tend to be organized unless I'm lazy and I have a lot of stuffed animals! I hate food. As Co-Presidents, we work together with administration, our directors, and members to execute policies and events.",
+        description: "Hi! I'm Vanna and I enjoy spending my free time reading webtoons or playing games. I tend to be organized unless I'm lazy and I have a lot of stuffed animals! I HATE food. As Co-Presidents, we work together with administration, our directors, and members to execute policies and events.",
         image: Vanna
       }
   ]

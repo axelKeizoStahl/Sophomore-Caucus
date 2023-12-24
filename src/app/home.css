@@ -102,55 +102,6 @@
   font-weight: 400;
 }
 
-.sched {
-  width: 305px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: .1px dotted white;
-  border-radius: 3px;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.7);
-  transition: all 0.5s ease;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.sched:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.period {
-  font-weight: 500;
-  font-size: 50px;
-}
-
-.time {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  position: relative;
-  top: 20px;
-}
-
-.col {
-  flex-direction: column;
-  font-size: 60px;
-}
-
-.min-don {
-  color: green;
-}
-
-.min-to {
-  color: red;
-}
-
-.hide {
-  display: none;
-}
-
 @media screen and (max-width: 1000px) {
   .container {
     position: absolute;
