@@ -2,13 +2,13 @@
 import styles from './Schedule.module.css'
 import { useState, useEffect } from 'react';
 import { i18n } from '../../../next.config';
-import { Warnes } from 'next/font/google';
+import { Herr_Von_Muellerhoff, Warnes } from 'next/font/google';
 
 export const dynamic = "force-dynamic";
 export default function Home() {
-  const [timer, setTimer] = useState(new Date().getHours()*3600 + new Date().getMinutes()*60);
+  const [timer, setTimer] = useState(new Date().getHours() * 3600 + new Date().getMinutes() * 60);
   let working_sched = optimizedBellSchedules.find(schedule => schedule.name == "Regular").schedule;
-  const [currpd, setCurrPd] = useState(()=>{
+  const [currpd, setCurrPd] = useState(() => {
     let low = 0;
     let top = 19;
     let mid = 9;
@@ -17,8 +17,8 @@ export default function Home() {
     else if (timer > working_sched[9].end) { return "After School"; }
 
     while (top - low > 1) {
-      let current_pd = working_sched[Math.floor(mid/2)];
-      if (mid%2 == 0) {
+      let current_pd = working_sched[Math.floor(mid / 2)];
+      if (mid % 2 == 0) {
         var mid_time = current_pd.start;
       } else {
         var mid_time = current_pd.end;
@@ -41,8 +41,8 @@ export default function Home() {
     }
   });
 
-  const [min, setMin] = useState(()=>{
-    if (typeof(currpd) == 'string') { return currpd.split(' '); }
+  const [min, setMin] = useState(() => {
+    if (typeof (currpd) == 'string') { return currpd.split(' '); }
     else {
       let sec_from_start = timer - working_sched[currpd - 1].start;
       let sec_to_end = working_sched[currpd - 1].end - timer;
@@ -54,36 +54,43 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       console.log(min);
-      let away_from_min = timer % 60;
-      if (away_from_min == 0) {
-        if (typeof(currpd) == 'string') {
-          if (timer > 86400) {
-            if (timer >= working_sched[0].start) {
-              setCurrPd(1);
-              setMin([0, Math.floor((timer - working_sched[0].start) / 60)]);
-            } else if (timer < working_sched[0].start) {
-              setMin(min[0] + 1, min[1] - 1);
-            } else {
-              setTimer(0);
-              setMin([0, Math.floor(working_sched[0].start / 60)]);
-              setCurrPd('Before School');
+      let away_from_min = timer % 60; //amount of seconds away from the last minute
+      if (away_from_min == 0) { //if the amount of time away from minute is equal to 0 (minute has just passed)
+        if (typeof currpd == 'string') { //if the current period is written as a string (if it is Before or After School)
+
+          if (timer > 86400) { //if the time is above midnight, meaning that it is time to become before school, the AM
+            setTimer(0); //set time to 0
+            setMin(['Before', 'School']); //set minutes to "Before School"
+            setCurrPd('Before School'); //set the current period to "BEFORE SCHOOL"
+
+          } else if (currpd == 'Before School') {
+            if (timer >= working_sched[0].start) { //if the time is greater than or equal to the start of the first period
+              setCurrPd(1); //then set the current period to period 1
+              setMin([0, Math.floor((working_sched[0].end - working_sched[0].start) / 60)]); //set minutes => minutes passed: 0, minutes to end: difference between the end and now, in minutes
             }
           }
-        } else if (!Number.isInteger(currpd)) {
-          if (working_sched[currpd - 0.5].start <= timer) {
-            setCurrPd(currpd + 0.5);
-            setMin(0, Math.floor((working_sched[currpd - 1].end - timer) / 60));
-          } else {
-            setMin([min[0] + 1, min[1] - 1]);
+
+        } else if (!Number.isInteger(currpd) && typeof currpd != 'string') { //otherwise, if the number is not an int or string (looking for a decimal, passing period)
+
+          if (working_sched[currpd - 0.5].start <= timer) { //if the next period's start is less than or equal to the current time
+            setCurrPd(currpd + 0.5); //set curr period away from passing period by adding 0.5 to the X.5 number that is stored in currpd
+            setMin(0, Math.floor((working_sched[currpd - 1].end - working_sched[currpd - 1].start) / 60)); //set minutes: 0 done, end time - start time in minutes
+
+          } else { //otherwise, if the amount of minutes is not into the next period
+            setMin([min[0] + 1, min[1] - 1]); //set the min done + 1 and set min to end - 1
           }
-        } else if (timer > working_sched[currpd - 1].end) {
-          if (currpd == 10) {
-            setCurrPd("After School");
-            setMin(['After', 'School']);
-          } else {
-            setCurrPd(currpd + 0.5);
-            setMin(0, Math.floor((working_sched[currpd].start - timer) / 60));
+
+        } else if (timer >= working_sched[currpd - 1].end) { //otherwise, if the time is greater then the current period's end
+
+          if (currpd == 10) {//if the current period is 10
+            setCurrPd("After School");//set the current period to after school
+            setMin(['After', 'School']);;//set the minutes to "after, school"
+
+          } else { //otherwise, if the period is 1-9
+            setCurrPd(currpd + 0.5);//set the period to a passing period, + 0.5
+            I AM HERE, COMPLETE LATER, CHANGE THE SECOND MIN ARGUEMTNsetMin([0, Math.floor((working_sched[currpd].start - timer) / 60)]); //set minutes to done, 0, to end
           }
+
         } else {
           setMin([min[0] + 1, min[1] - 1]);
         }
@@ -95,12 +102,12 @@ export default function Home() {
   }, [timer]);
   return (
     <div className={styles.sched}>
-    <div className={styles.period}>pd. {currpd}</div>
-    <div className={`${typeof(currpd) == 'string' ? styles.col :''} ${styles.time}`}>
-    <div className={`${styles.min} ${styles.minDon}`}>{min[0]}</div>
-    <p className={`${typeof(currpd) == 'string' ? styles.hide : styles.sec}`}>{60 - (timer % 60)}</p>
-    <div className={`${styles.min} ${styles.minTo}`}>{min[1]}</div>
-    </div>
+      <div className={styles.period}>pd. {currpd}</div>
+      <div className={`${typeof (currpd) == 'string' ? styles.col : ''} ${styles.time}`}>
+        <div className={`${styles.min} ${styles.minDon}`}>{min[0]}</div>
+        <p className={`${typeof (currpd) == 'string' ? styles.hide : styles.sec}`}>{60 - (timer % 60)}</p>
+        <div className={`${styles.min} ${styles.minTo}`}>{min[1]}</div>
+      </div>
     </div>
   )
 }
