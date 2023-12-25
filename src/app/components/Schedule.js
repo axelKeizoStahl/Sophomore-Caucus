@@ -74,7 +74,7 @@ export default function Home() {
 
           if (working_sched[currpd - 0.5].start <= timer) { //if the next period's start is less than or equal to the current time
             setCurrPd(currpd + 0.5); //set curr period away from passing period by adding 0.5 to the X.5 number that is stored in currpd
-            setMin(0, Math.floor((working_sched[currpd - 1].end - working_sched[currpd - 1].start) / 60)); //set minutes: 0 done, end time - start time in minutes
+            setMin([0, Math.floor((working_sched[currpd - 1].end - working_sched[currpd - 1].start) / 60)]); //set minutes: 0 done, end time - start time in minutes
 
           } else { //otherwise, if the amount of minutes is not into the next period
             setMin([min[0] + 1, min[1] - 1]); //set the min done + 1 and set min to end - 1
@@ -88,14 +88,14 @@ export default function Home() {
 
           } else { //otherwise, if the period is 1-9
             setCurrPd(currpd + 0.5);//set the period to a passing period, + 0.5
-            I AM HERE, COMPLETE LATER, CHANGE THE SECOND MIN ARGUEMTNsetMin([0, Math.floor((working_sched[currpd].start - timer) / 60)]); //set minutes to done, 0, to end
+            setMin([0, Math.floor((working_sched[currpd].start - working_sched[currpd - 1].end) / 60)]); //set minutes: to done, 0, to end, next period start - last period end in min
           }
 
-        } else {
-          setMin([min[0] + 1, min[1] - 1]);
+        } else { //otherwise, if period doesn't need changing
+          setMin([min[0] + 1, min[1] - 1]); //just add one to min start and lower min to end by one
         }
       }
-      setTimer(timer + 1);
+      setTimer(timer + 1); //incremenent timer by one
     }, 1000);
 
     return () => clearInterval(interval);
