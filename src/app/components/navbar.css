@@ -8,20 +8,19 @@
   z-index: 1000;
   padding: 0;
   margin: 0;
+  background-color: transparent;
   font-family: Arial;
-  padding-top: 20px;
-  padding-left: 20px;
-  font-weight: 400;
-  background: transparent;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .navbar a {
-  font-size: 22px;
+  font-size: 20px;
   color: white;
   text-decoration: none;
   padding: 10px 16px;
   margin: 0; /* Reset margin */
-  font-weight: 500;
+  font-weight: bold;
 }
 
 ul {
@@ -35,19 +34,18 @@ ul {
 
 .dropdown {
   position: relative;
-  font-weight: 500;
 }
 
 .dropdown .dropbtn {
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   padding: 10px 16px;
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   margin: 0; /* Reset margin */
-  font-weight: 500;
+  font-weight: bolder;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
