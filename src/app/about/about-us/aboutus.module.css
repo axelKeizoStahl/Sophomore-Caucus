@@ -7,11 +7,10 @@
 }
 
 .presidents {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   text-align: center;
+  height: 1000px;
   margin-bottom: 100px;
+  justify-content: center;
 }
 
 .presidents h1 {
@@ -21,16 +20,17 @@
 }
 
 .president {
+  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 100px;
   pointer-events: none;
+  margin-left: 100px;
 }
 
 .Vanna {
-  margin-left: 300px;
-  margin-top: -400px;
+  left: 100px;
+  top: 400px;
 }
 
 .imagecontainer {
@@ -62,7 +62,6 @@
 }
 
 .Cayladescription {
-  margin-left: 290px;
 }
 
 .description p {
@@ -79,9 +78,10 @@
   font-size: 60px;
 }
 
-.departments-container {
+.departmentsContainer {
   display: flex;
   flex-direction: row;
+  gap: 10px;
   overflow: scroll;
   width: 100%;
   justify-content: center;
@@ -89,7 +89,7 @@
 
 .department {
   margin-bottom: 50px;
-  background-image:  linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) ), url("../../aboutus-replace.jpg");
+  background:  rgba(229, 170, 226, 0.5);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   width: 300px;
   height: 300px;
