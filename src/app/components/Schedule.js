@@ -9,8 +9,7 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   let working_sched = optimizedBellSchedules.find(schedule => schedule.name == "Regular").schedule;
   const [currpd, setCurrPd] = useState(() => {
-    let yo = findCurrPd(getCurrTime(), working_sched);
-    return yo
+    return findCurrPd(getCurrTime(), working_sched);
   });
 
   const [min, setMin] = useState(() => {
@@ -22,7 +21,6 @@ export default function Home() {
   useEffect(() => {
     setInterval(() => {
       let newTime = findCurrMin(getCurrTime(), working_sched, currpd)
-      console.log(newTime.currMin)
       setMin(newTime.currMin);
       if (currpd != newTime.pd) { setCurrPd(newTime.pd); }
     }, 1000)
@@ -40,7 +38,14 @@ export default function Home() {
 }
 
 function findCurrMin(time, working_sched, currpd) {
-  if (typeof (currpd) == 'string') { return currpd.split(' '); }
+  if (typeof (currpd) == 'string') {
+    if (time < working_sched[0].start && currpd != "Before School") {
+      return {pd: "Before School", currMin: ["Before", "School"]}
+    } else if (time >= working_sched[0].start) {
+      return {pd: 1, currMin: [0, secToMin(working_sched[0].end - time), 60 - (time % 60)]};
+    }
+    return {pd: currpd, currMin: currpd.split(' ')};
+  }
   else {
       if (!Number.isInteger(currpd)) {
         if (time == working_sched[currpd - 0.5].start) {
@@ -51,7 +56,11 @@ function findCurrMin(time, working_sched, currpd) {
         }
       } else {
         if (time > working_sched[currpd - 1].end) {
-          return {pd: currpd + 0.5, currMin: [0, secToMin(working_sched[currpd].start - working_sched[currpd - 1].end), 60 - (time % 60)]}
+          if (currpd == 10) {
+            return {pd: "After School", currMin: ["After", "School"]}
+          } else {
+            return {pd: currpd + 0.5, currMin: [0, secToMin(working_sched[currpd].start - working_sched[currpd - 1].end), 60 - (time % 60)]}
+          }
         } else {
           return {pd: currpd, currMin: [secToMin(time - working_sched[currpd - 1].start), secToMin(working_sched[currpd - 1].end - time), 60 - (time % 60)]};
         }
