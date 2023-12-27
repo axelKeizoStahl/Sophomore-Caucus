@@ -41,10 +41,11 @@ function findCurrMin(time, working_sched, currpd) {
   if (typeof (currpd) == 'string') {
     if (time < working_sched[0].start && currpd != "Before School") {
       return {pd: "Before School", currMin: ["Before", "School"]}
-    } else if (time >= working_sched[0].start) {
+    } else if (time >= working_sched[0].start && currpd != "After School") {
       return {pd: 1, currMin: [0, secToMin(working_sched[0].end - time), 60 - (time % 60)]};
+    } else {
+      return {pd: currpd, currMin: currpd.split(' ')};
     }
-    return {pd: currpd, currMin: currpd.split(' ')};
   }
   else {
       if (!Number.isInteger(currpd)) {
