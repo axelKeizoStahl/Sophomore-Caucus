@@ -1,8 +1,8 @@
 "use client"
 import styles from './aboutus.module.css'
-import logo from '../../logo.png'
-import Vanna from '../../images/Vanna.jpg'
-import Cayla from '../../images/Cayla.jpg'
+import logo from '@/app/logo.png'
+import Vanna from '@/app/images/Vanna.jpg'
+import Cayla from '@/app/images/Cayla.jpg'
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'

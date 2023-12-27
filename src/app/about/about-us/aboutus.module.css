@@ -129,19 +129,22 @@
   .presidentInfo {
     flex-direction: column;
   }
+  .infoContainer {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .presidents {
     transform: scale(0.75)
   }
   .departmentsContainer {
     transform: scale(0.75)
   }
-  .infoContainer {
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 747px) {
   .departmentsContainer {
     grid-template-columns: repeat(2, 300px);
+  }
+  .description p {
+    font-size: 20px
   }
 }
