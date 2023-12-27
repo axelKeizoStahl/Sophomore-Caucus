@@ -1,5 +1,6 @@
 "use client"
 import styles from './aboutus.module.css'
+import logo from '../../logo.png'
 import Vanna from '../../images/Vanna.jpg'
 import Cayla from '../../images/Cayla.jpg'
 import { useState } from 'react'
@@ -33,7 +34,16 @@ export default function Page() {
       photo: "../../images/",},
   ]
   return (
-    <div>
+    <div className={styles.aboutUs}>
+      <div className={styles.header}>
+        <Image
+          src={logo}
+          width={170}
+          height={170}
+          alt='Sophmore Caucus Logo'
+        />
+        <p>About Us</p>
+      </div>
       <div className={styles.presidents}>
         <h1>Presidents</h1>
         <div className={styles.presidentInfo}>
