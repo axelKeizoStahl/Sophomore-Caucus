@@ -1,5 +1,5 @@
 .top {
-  z-index: 1;
+  z-index: 10;
 }
 
 .hidden {
@@ -8,7 +8,7 @@
 
 .presidents {
   text-align: center;
-  height: 1000px;
+  height: fit-content;
   margin-bottom: 100px;
   justify-content: center;
 }
@@ -17,6 +17,18 @@
   font-size: 70px;
   margin-top: 80px;
   margin-bottom: 30px;
+}
+
+.presidentInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .president {
@@ -29,20 +41,23 @@
 }
 
 .Vanna {
-  left: 100px;
-  top: 400px;
+  margin-left: 100px;
+  margin-top: -400px;
 }
 
-.imagecontainer {
+.imageContainer {
   transition: transform .1s;
   background-color: #262626;
   width: 500px;
   height: 600px;
   border-radius: 3px;
   pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.imagecontainer:hover {
+.imageContainer:hover {
   transform: scale(1.02);
 }
 
@@ -52,16 +67,17 @@
   border-radius: 20px;
 }
 
+.descriptionContainer {
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+
 .description {
-  margin-left: 200px;
   background-color: #404040;
   padding: 40px;
   color: white;
-  margin-right: 30px;
   border-radius: 8px;
-}
-
-.Cayladescription {
 }
 
 .description p {
@@ -100,4 +116,13 @@
 
 .department:hover {
   transform: scale(1.04);
+}
+
+@media screen and (max-width: 1300px) {
+  .presidentInfo {
+    flex-direction: column;
+  }
+  .infoContainer {
+    justify-content: center;
+  }
 }

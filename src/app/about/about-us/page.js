@@ -36,22 +36,28 @@ export default function Page() {
     <div>
       <div className={styles.presidents}>
         <h1>Presidents</h1>
-        {presidents.map((president, index) => (
-          <div key={`president${index+1}`} className={`${president.name == 'Vanna' ? styles.Vanna : ''} ${styles.president} ${presTop == president.name ? styles.top : ''}`} >
-            <div className={`${styles.imagecontainer} ${president.name == 'Vanna' ? styles.Vanna : ''}`} onClick={() => setPresTop(president.name)}>
-              <Image
-                src={president.image}
-                width={400}
-                height={500}
-                alt={president.name}
-              />
-            </div>
-            <div className={`${president.name == 'Cayla' ? styles.Cayladescription : ''} ${styles.description} ${presTop != president.name ? styles.hidden: ''}`}>
-              <h2>{president.name}</h2>
-              <p>{president.description}</p>
-            </div>
+        <div className={styles.presidentInfo}>
+          <div className={styles.infoContainer}>
+            {presidents.map((president, index) => (
+              <div key={`president${index+1}`} className={`${styles.info} ${styles.imageContainer} ${presTop == president.name ? styles.top : ''} ${president.name == 'Vanna' ? styles.Vanna : ''}`} onClick={() => setPresTop(president.name)}>
+                <Image
+                  src={president.image}
+                  width={400}
+                  height={500}
+                  alt={president.name}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+          <div className={`${styles.descriptionContainer} ${styles.infoContainer}`}>
+            {presidents.map((president, index) => (
+              <div key={`description${index}`} className={`${styles.info} ${styles.description} ${presTop != president.name ? styles.hidden: ''}`}>
+                  <h2>{president.name}</h2>
+                  <p>{president.description}</p>
+                </div>
+            ))}
+          </div>
+        </div>
       </div>
       <div className={styles.departments}>
         <h1>Departments</h1>
@@ -60,8 +66,7 @@ export default function Page() {
             <Link href={`/about/about-us/${department.department.toLowerCase()}`} className={styles.department} key={index}>
               <h3>{department.department}</h3>
             </Link>
-          )
-          )}
+          ))}
         </div>
       </div>
     </div>
