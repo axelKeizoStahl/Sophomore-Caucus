@@ -1,15 +1,17 @@
-import styles from "BouncingDivs.module.css";
 "use client";
+import styles from "./BouncingDivs.module.css";
+import { useState, useEffect } from 'react';
 
 const getRandomNumber = (min, max) => Math.random() * (max - min) + min;
 
 export default function BouncingDivs() {
   const [divs, setDivs] = useState([]);
+  const divsData = Array.from({ length: 20 }, (_, index) => index);
 
   useEffect(() => {
     const randomDivs = Array.from({ length: 100 }, (_, i) => ({
       id: i + 1,
-      top: getRandomNumber(0, window.innerHeight - 100),
+      top: getRandomNumber(0, document.documentElement.scrollHeight - 100),
       left: getRandomNumber(0, window.innerWidth - 100),
       velX: getRandomNumber(-2, 2),
       velY: getRandomNumber(-2, 2),
