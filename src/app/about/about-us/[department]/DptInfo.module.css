@@ -85,3 +85,14 @@
     font-weight: 500;
     margin-bottom: 1rem;
 }
+
+@media screen and (max-width: 1500px) {
+  .dptLeader, .dptContainer2 {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .dptLeaderDescription {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+}

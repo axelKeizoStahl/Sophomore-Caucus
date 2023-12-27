@@ -6,6 +6,7 @@ import graphics from '../../../images/graphics.jpg'
 import internals from '../../../images/internals.jpg'
 import outreach from '../../../images/outreach.jpg'
 import Image from 'next/image';
+import BouncingDivs from '@/app/components/BouncingDivs';
 
 export default function Page({ params }) {
     const department_info = {
@@ -42,7 +43,7 @@ export default function Page({ params }) {
         outreach: {
             image: outreach,
             leader: ["Zihe Huang", "Hey, I’m the outreach director for Sophomore Caucus. Outside of Caucus, I’m also involved in Model UN, the Metis Project and the Volleyball Team. In outreach, our responsibilities are to coordinate with clubs in Stuy, reach out to external organizations, and advertise events. We hope to create a well connected student body and make events more enjoyable."],
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nisl. Sed euismod, nisl eget ultricies ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nisl.",
+            description: "The outreach department is in charge of promoting Caucus events and staying in touch with the student body. This includes using social media, posters, reaching out to other organizations for collaborations among other methods of communication. Additionally, we create monthly features to support Sophomore ran clubs -- if you're interested make sure to fill out the form on our insta!!",
             members: "Leah Riegel, Theresa Lau",
         },
     }
@@ -51,6 +52,7 @@ export default function Page({ params }) {
     const department_name = params.department[0].toUpperCase() + params.department.slice(1)
     return (
         <div className={styles.dptPage}>
+            <BouncingDivs className={styles.balls} />
             <h1>{"Department of " + department_name}</h1>
             <div>
                 <div className={styles.dptLeader}>
