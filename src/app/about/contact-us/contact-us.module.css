@@ -15,12 +15,3 @@
     z-index: 1;
 }
 
-.movediv {
-    position: absolute;
-    z-index: 1;
-    height: 10px;
-    width: 10px;
-    border-radius: 100%;
-    box-shadow: 0 0 500px rgba(229,170,226,0.9);
-}
-
