@@ -20,9 +20,9 @@ export default function Home() {
 
   useEffect(() => {
     setInterval(() => {
-      let newTime = findCurrMin(getCurrTime(), working_sched, currpd)
+      let newTime = findCurrMin(getCurrTime(), working_sched, currpd);
+      setCurrPd(newTime.pd);
       setMin(newTime.currMin);
-      if (currpd != newTime.pd) { setCurrPd(newTime.pd); }
     }, 1000)
   });
   return (
@@ -49,7 +49,7 @@ function findCurrMin(time, working_sched, currpd) {
   }
   else {
       if (!Number.isInteger(currpd)) {
-        if (time == working_sched[currpd - 0.5].start) {
+        if (time >= working_sched[currpd - 0.5].start) {
           let secToEnd = working_sched[currpd - 0.5].end - time;
           return {pd: currpd + 0.5, currMin: [0, secToMin(secToEnd), 60 - (time % 60)]};
         } else {
