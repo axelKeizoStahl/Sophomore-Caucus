@@ -8,30 +8,30 @@ import { Herr_Von_Muellerhoff, Warnes } from 'next/font/google';
 export const dynamic = "force-dynamic";
 export default function Home() {
   let working_sched = optimizedBellSchedules.find(schedule => schedule.name == "Regular").schedule;
-  const [currpd, setCurrPd] = useState(() => {
-    return findCurrPd(getCurrTime(), working_sched);
-  });
 
   const [min, setMin] = useState(() => {
+    let currpd = getCurrPd(getCurrTime(), working_sched);
     let newTime = findCurrMin(getCurrTime(), working_sched, currpd)
-    return newTime.currMin;
+    return newTime;
   });
 
-
+  var time = getCurrTime();
   useEffect(() => {
     setInterval(() => {
-      let newTime = findCurrMin(getCurrTime(), working_sched, currpd);
-      setCurrPd(newTime.pd);
-      setMin(newTime.currMin);
+      time += 1;
+      if (time % 60 == 0) {
+        let newTime = findCurrMin(getCurrTime(), working_sched, min[3]);
+        time = newTime[2];
+        if (newTime.slice(0, 2) != min.slice(0, 2)) { setMin(newTime); }
+      }
     }, 1000)
   });
   return (
     <div className={styles.sched}>
-      <div className={styles.period}>{currpd}</div>
-      <div className={`${typeof (currpd) == 'string' ? styles.col : ''} ${styles.time}`}>
-        <div className={`${typeof (currpd) == 'string' ? '' : styles.min} ${styles.minDon}`}>{min[0]}</div>
-        <p className={`${typeof (currpd) == 'string' ? styles.hide : styles.sec}`}>{min[2]}</p>
-        <div className={`${typeof (currpd) == 'string' ? '' : styles.min} ${styles.minTo}`}>{min[1]}</div>
+      <div className={styles.period}>{min[3]}</div>
+      <div className={`${typeof (min[3]) == 'string' ? styles.col : ''} ${styles.time}`}>
+        <div className={`${typeof (min[3]) == 'string' ? '' : styles.min} ${styles.minDon}`}>{min[0]}</div>
+        <div className={`${typeof (min[3]) == 'string' ? '' : styles.min} ${styles.minTo}`}>{min[1]}</div>
       </div>
     </div>
   )
@@ -40,36 +40,36 @@ export default function Home() {
 function findCurrMin(time, working_sched, currpd) {
   if (typeof (currpd) == 'string') {
     if (time < working_sched[0].start && currpd != "Before School") {
-      return {pd: "Before School", currMin: ["Before", "School"]}
+      return ["Before", "School", "Before School"];
     } else if (time >= working_sched[0].start && currpd != "After School") {
-      return {pd: 1, currMin: [0, secToMin(working_sched[0].end - time), 60 - (time % 60)]};
+      return [0, secToMin(working_sched[0].end - time), time, 1];
     } else {
-      return {pd: currpd, currMin: currpd.split(' ')};
+      return currpd.split(' ').concat([time, currpd]);
     }
   }
   else {
       if (!Number.isInteger(currpd)) {
         if (time >= working_sched[currpd - 0.5].start) {
           let secToEnd = working_sched[currpd - 0.5].end - time;
-          return {pd: currpd + 0.5, currMin: [0, secToMin(secToEnd), 60 - (time % 60)]};
+          return [0, secToMin(secToEnd), time, currpd + 0.5];
         } else {
-          return {pd: currpd, currMin: [secToMin(time - working_sched[currpd - 1.5].end), secToMin(working_sched[currpd - .5].start - time), 60 - (time % 60)]};
+          return [secToMin(time - working_sched[currpd - 1.5].end), secToMin(working_sched[currpd - .5].start - time), time, currpd];
         }
       } else {
         if (time > working_sched[currpd - 1].end) {
           if (currpd == 10) {
-            return {pd: "After School", currMin: ["After", "School"]}
+            return ["After", "School", time, "After School"];
           } else {
-            return {pd: currpd + 0.5, currMin: [0, secToMin(working_sched[currpd].start - working_sched[currpd - 1].end), 60 - (time % 60)]}
+            return [0, secToMin(working_sched[currpd].start - working_sched[currpd - 1].end), time, currpd + 0.5];
           }
         } else {
-          return {pd: currpd, currMin: [secToMin(time - working_sched[currpd - 1].start), secToMin(working_sched[currpd - 1].end - time), 60 - (time % 60)]};
+          return [secToMin(time - working_sched[currpd - 1].start), secToMin(working_sched[currpd - 1].end - time), time, currpd];
         }
       }
   }
 }
 
-function findCurrPd(time, working_sched) {
+function getCurrPd(time, working_sched) {
     let low = 0;
     let top = 19;
     let mid = 9;

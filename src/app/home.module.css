@@ -82,6 +82,7 @@
   margin-top: 20px;
 }
 
+
 .homeEvent {
   width: 500px;
   border: .1px dotted white;
@@ -90,6 +91,7 @@
   font-size: 17px;
   background: rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
+  backdrop-filter: blur(2px);
 }
 
 .homeEvent:hover {
