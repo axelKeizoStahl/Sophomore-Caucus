@@ -80,7 +80,7 @@
 
 .event_info {
   background: rgba(229, 170, 226, 1);
-  opacity: 0.89;
+  opacity: 0.97;
   z-index: 1;
   position: fixed;
   top: 10vh;
@@ -89,12 +89,16 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 50px #ccc;
-  .img {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
+}
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .info {
+    margin-top: 75px;
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 60ch;
   }
   .title {
     font-size: 70px;
@@ -102,7 +106,6 @@
     margin-bottom: 20px;
     text-align: center;
   }
-}
 
 .end_message {
   font-size: 70px;
@@ -134,13 +137,25 @@
     font-size: 20px;
   }
   .event-info {
-    width: 90%;
-    height: 80vh;
+    width: 50%;
+    height: fit-content;
     top: 10vh;
     padding: 10px;
     .title {
       font-size: 50px;
     }
+  }
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+  .info {
+    margin-top: 0;
+    max-width: 35ch;
+    align-items: center;
+    font-size: 13px;
   }
   .end-message {
     font-size: 30px;
