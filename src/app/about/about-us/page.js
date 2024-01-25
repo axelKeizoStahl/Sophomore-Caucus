@@ -2,7 +2,7 @@
 import styles from './aboutus.module.css'
 import logo from '@/app/logo.png'
 import Vanna from '@/app/images/Vanna.jpg'
-import Cayla from '@/app/images/Cayla.jpg'
+import Cayla from '@/app/images/Cayla.webp'
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
