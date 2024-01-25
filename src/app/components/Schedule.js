@@ -18,6 +18,7 @@ export default function Home() {
   var time = getCurrTime();
   useEffect(() => {
     setInterval(() => {
+      date = new Date;
       time += 1;
       if (time % 60 == 0) {
         let newTime = findCurrMin(getCurrTime(), working_sched, min[3]);
@@ -38,9 +39,14 @@ export default function Home() {
 }
 
 function findCurrMin(time, working_sched, currpd) {
-  if (typeof (currpd) == 'string') {
+  let date = new Date;
+  date = date.getDate()
+  if (date >= 23 && date < 30) {
+    return ["No", "School", time, "No School"];
+  }
+  else if (typeof (currpd) == 'string') {
     if (time < working_sched[0].start && currpd != "Before School") {
-      return ["Before", "School", "Before School"];
+      return ["Before", "School", time, "Before School"];
     } else if (time >= working_sched[0].start && currpd != "After School") {
       return [0, secToMin(working_sched[0].end - time), time, 1];
     } else {
