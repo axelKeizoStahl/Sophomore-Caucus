@@ -3,6 +3,13 @@ import Image from 'next/image'
 import logo from '../../logo.png'
 
 export default function Page() {
+  const magLinks = [
+    "https://drive.google.com/file/d/1iyB3G_8wyro74L32NR1SU1OxZl9XQ_1T/view?usp=sharing",
+    "https://drive.google.com/file/d/1pO1-726ELxLsiMWli8ObHOSxC49U7Sr3/view?usp=sharing",
+    "https://drive.google.com/file/d/1lvO6TvMLQeT1LKIB-weM5WoyB87rBBTX/view?usp=sharing",
+    "https://drive.google.com/file/d/1Ql5AGt7-s9czXmAAlYHkSqbjA8tLCgtq/view?usp=sharing",
+    "https://drive.google.com/file/d/13M8LKFjOtAt14hWvrS19cU9nkRteIbUI/view?usp=sharing"
+  ]
   return (
     <div>
       <div className={styles.navbar}></div>
@@ -11,9 +18,17 @@ export default function Page() {
         <h1 className={styles.title}>Magazines</h1>
       </div>
       <div className={styles.mags}>
-          {[1,2,3,4].map((i) => (
-            <iframe className={styles.mag} src={`/mags/mag${i}.pdf#toolbar=0`} height="600" width="600" frameborder="0" />
-          ))}
+        {[1,2,3,4,5].map((i) => (
+          <a href={magLinks[i-1]}>
+          <Image
+            className={styles.mag}
+            src={`/mags/mag${i}-1.png`}
+            width={500}
+            height={500}
+            alt='cover of mag'
+          />
+          </a>
+        ))}
       </div>
       <h1 className={`${styles.end_message} `}>These are all the events we have planned for now. Check back later for more!</h1>
     </div>
