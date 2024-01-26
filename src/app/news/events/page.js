@@ -10,13 +10,13 @@ export default function Page() {
   const [event_info_show, setEvent_info_show] = useState("0")
 
   var events = [
-   {
+   /**{
       title: "Dance",
       date: "2021-01-01",
       time: "12:00",
       location: "Location 1",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
+    },**/
   ]
   return (
     <div className={`${typeof event_info_show!="string" ? styles.darken:""} ${styles.upcoming_events}`}>
