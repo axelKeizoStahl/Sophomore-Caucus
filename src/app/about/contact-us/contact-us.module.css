@@ -1,0 +1,17 @@
+.btn {
+    position: absolute;
+    top: 35vh;
+    left: 30vw;
+    height: 30vh;
+    width: 40vw;
+    border-radius: 6px;
+    background: radial-gradient(ellipse at center, #fff 0%, #fff 100%);
+    font-size: 3.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 500px rgba(229,170,226,0.9);
+    z-index: 1;
+}
+

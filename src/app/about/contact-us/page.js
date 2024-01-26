@@ -1,10 +1,12 @@
+"use client"
+import styles from './contact-us.module.css'
+import BouncingDivs from '../../components/BouncingDivs.js'
+
 export default function Page() {
   return (
-    <div className="contact-us">
-      <div className="header">
-        <h1>Contact Us!</h1>
-        <p></p>
-      </div>
+    <div>
+      <BouncingDivs />
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdi0gWjcGXZR4OPhXcxjFvv5rqejW8gxvnt89stTXo2neiTww/viewform" alt="contact form" className={styles.btn}>Let's Talk!</a>
     </div>
   )
 }

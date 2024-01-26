@@ -1,0 +1,98 @@
+.dptPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dptPage h1 {
+    font-size: 70px;
+    margin: 50px;
+}
+.dptPage h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.dptLeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dptLeaderContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 420px;
+    align-items: center;
+    padding: 20px;
+    background-color: #666666;
+    color: #fff;
+    border-radius: 5px;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dptLeaderContainer:hover {
+    background-color: #404040;
+    transform: scale(1.05);
+}
+
+.dptLeaderDescription {
+    background-color: #666666;
+    padding: 50px;
+    width: 600px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 100px;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.dptLeaderDescription:hover {
+    background-color: #404040;
+    transform: scale(1.05);
+}
+
+.dptContainer2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.dptOther {
+    background-color: #666666;
+    padding: 50px;
+    width: 600px;
+    height: 250px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dptOther:hover {
+    background-color: #404040;
+}
+
+.dptMembersName {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1500px) {
+  .dptLeader, .dptContainer2 {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .dptLeaderDescription {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+}

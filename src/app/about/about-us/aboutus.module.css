@@ -1,0 +1,150 @@
+.header {
+  background: #595959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 40px 60px;
+  font-size: 90px;
+  color: white;
+  font-weight: 300;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  margin-top: 70px;
+}
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.top {
+  z-index: 10;
+}
+
+.hidden {
+  opacity: 0.5;
+}
+
+.presidents {
+  text-align: center;
+  height: fit-content;
+  margin-bottom: 100px;
+  justify-content: center;
+}
+
+.presidents h1 {
+  font-size: 70px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.presidentInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.Vanna {
+  margin-left: 100px;
+  margin-top: -400px;
+}
+
+.imageContainer {
+  transition: transform .1s;
+  background-color: #262626;
+  width: 500px;
+  height: 600px;
+  border-radius: 3px;
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer:hover {
+  transform: scale(1.02);
+}
+
+.descriptionContainer {
+  justify-content: center;
+  align-items: center;
+  gap: 20px
+}
+
+.description {
+  background-color: #404040;
+  padding: 40px;
+  color: white;
+  border-radius: 8px;
+}
+
+.description p {
+  max-width: 700px;
+}
+
+.departments {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.departments h1 {
+  font-size: 60px;
+}
+
+.departmentsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 40px;
+  overflow: scroll;
+  justify-content: center;
+}
+
+.department {
+  margin-bottom: 50px;
+  background:  rgba(229, 170, 226, 0.5);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 300px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.department:hover {
+  transform: scale(1.04);
+}
+
+@media screen and (max-width: 1300px) {
+  .presidentInfo {
+    flex-direction: column;
+  }
+  .infoContainer {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .presidents {
+    transform: scale(0.75)
+  }
+  .departmentsContainer {
+    transform: scale(0.75)
+  }
+  .departmentsContainer {
+    grid-template-columns: repeat(2, 300px);
+  }
+  .description p {
+    font-size: 20px
+  }
+}
