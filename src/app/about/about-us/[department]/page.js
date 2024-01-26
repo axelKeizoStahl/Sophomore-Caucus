@@ -18,15 +18,15 @@ export default function Page({ params }) {
         },
         finance: {
             image: finance,
-            leader: ["Amy Wang", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dictumst vestibulum rhoncus est pellentesque elit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Fermentum posuere urna nec tincidunt praesent. Curabitur gravida arcu ac tortor dignissim. Odio eu feugiat pretium nibh ipsum consequat nisl. Eu tincidunt tortor aliquam nulla. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Eget felis eget nunc lobortis mattis. Velit egestas dui id ornare. Condimentum lacinia quis vel eros donec."],
+            leader: ["Amy Wang", "Hi! I’m one of the co directors of the finance department. Aside from school, I love to play volleyball and occasionally go on runs. I love listening to music and shopping. I’m associated with the Spectator Business department and SU budget department."],
             description: "Hi! We are the finance department. We are responsible for making budget plans for events. We strive to make events as cost friendly as possible for the Co-presidents.",
-            members: "John Doe, Jane Smith, Michael Johnson, Emily Davis, Robert Brown, Sarah Wilson",
+            members: "Mira Gupta",
         },
         graphics: {
             image: graphics,
             leader: ["Siddharth Shrivastava", "Hey! I'm the graphics director for the Sophomore Caucus. Outside of the Caucus, I also like to paint and draw in my free time, and I am involved with the Spectator Newspaper Sports department. In graphics, our responsibilities involve creating visually appealing content for various purposes, such as event promotions, club materials, and news for the school. I aim to improve our school's design and student engagement through creative and concise posters to make our student community even closer."],
             description: "The Graphics department makes all the monthly posts for our Sophomore Caucus instagram and creates the exciting pictures for our events. The department gives a glimpse of what each event will revolve around with a decorated theme around the needed information.",
-            members: "John Doe, Jane Smith, Michael Johnson, Emily Davis, Robert Brown, Sarah Wilson",
+            members: "Rebekah Abraham, Stephanie Wijaya",
         },
         it: {
             image: it,
