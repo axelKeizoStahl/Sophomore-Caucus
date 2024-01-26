@@ -18,7 +18,6 @@ export default function Home() {
   var time = getCurrTime();
   useEffect(() => {
     setInterval(() => {
-      date = new Date;
       time += 1;
       if (time % 60 == 0) {
         let newTime = findCurrMin(getCurrTime(), working_sched, min[3]);
