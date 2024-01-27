@@ -1,6 +1,5 @@
 import styles from './mags.module.css'
 import Image from 'next/image'
-import logo from '../../logo.png'
 
 export default function Page() {
   const magLinks = [
@@ -14,7 +13,7 @@ export default function Page() {
     <div>
       <div className={styles.navbar}></div>
       <div className={styles.header}>
-        <Image src={logo} height="170" width="170" />
+        <Image src='/images/logo.png' height="170" width="170" alt="logo" />
         <h1 className={styles.title}>Magazines</h1>
       </div>
       <div className={styles.mags}>

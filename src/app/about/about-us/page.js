@@ -1,8 +1,5 @@
 "use client"
 import styles from './aboutus.module.css'
-import logo from '@/app/logo.png'
-import Vanna from '@/app/images/Vanna.jpg'
-import Cayla from '@/app/images/Cayla.webp'
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,11 +10,11 @@ export default function Page() {
   var presidents = [
       {name: "Cayla",
         description: "Hey! My name is Cayla and I'm one of the Sophomore Caucus Co-Presidents. I lovee hanging out with friends and also taking naps (you'll probably catch both happening at the same time).  I also love to binge watch shows and draw in my free time. I'm really happy that Vanna and I get the chance to work together again, and bring you the best we can!! Hopefully, we won't dissapoint!",
-        image: Cayla
+        image: '/images/Cayla.webp'
       },
       {name: "Vanna",
         description: "Hi! I'm Vanna and I enjoy spending my free time reading webtoons or playing games. I tend to be organized unless I'm lazy and I have a lot of stuffed animals! I HATE food. As Co-Presidents, we work together with administration, our directors, and members to execute policies and events.",
-        image: Vanna
+        image: '/images/Vanna.jpg'
       }
   ]
 
@@ -37,7 +34,7 @@ export default function Page() {
     <div className={styles.aboutUs}>
       <div className={styles.header}>
         <Image
-          src={logo}
+          src='/images/logo.png'
           width={170}
           height={170}
           alt='Sophmore Caucus Logo'
