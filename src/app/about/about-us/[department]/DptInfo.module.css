@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.bouncingdivs {
+  position: absolute;
+};
+
 .dptPage h1 {
     font-size: 70px;
     margin: 50px;
@@ -96,3 +100,18 @@
     margin-bottom: 30px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .dptPage {
+    transform: scale(0.75);
+    margin-top: -200px;
+  }
+  .textContainer {
+    max-width: 35ch;
+    font-size: 18px;
+    height: fit-content;
+  }
+  .textContainer h4 {
+    font-size: 18px;
+  }
+};

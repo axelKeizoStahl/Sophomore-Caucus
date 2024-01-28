@@ -1,6 +1,6 @@
 "use client"
 import styles from './contact-us.module.css'
-import BouncingDivs from '../../components/BouncingDivs.js'
+import BouncingDivs from '@/app/components/BouncingDivs.js'
 
 export default function Page() {
   return (

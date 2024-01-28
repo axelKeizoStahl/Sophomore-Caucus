@@ -18,7 +18,7 @@ export default function Page() {
       </div>
       <div className={styles.mags}>
         {[1,2,3,4,5].map((i) => (
-          <a href={magLinks[i-1]}>
+          <a key={i} href={magLinks[i-1]}>
           <Image
             className={styles.mag}
             src={`/mags/mag${i}-1.png`}

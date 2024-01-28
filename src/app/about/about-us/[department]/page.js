@@ -50,7 +50,7 @@ export default function Page({ params }) {
             <h1>{"Department of " + department_name}</h1>
             <div>
                 <div className={styles.dptLeader}>
-                    <div className={styles.dptLeaderContainer}>
+                    <div className={`${styles.textContainer} ${styles.dptLeaderContainer}`}>
                         <Image
                             src={department.image}
                             width={400}
@@ -60,15 +60,15 @@ export default function Page({ params }) {
                         <h2>{department.leader[0]}</h2>
                     </div>
                     <div>
-                        <div className={styles.dptLeaderDescription}>{department.leader[1]}</div>
+                        <div className={`${styles.dptLeaderDescription} ${styles.textContainer}`}>{department.leader[1]}</div>
                     </div>
                 </div>
                 <div className={styles.dptContainer2}>
-                    <div className={styles.dptOther}>
+                    <div className={`${styles.textContainer} ${styles.dptOther}`}>
                         <h2>Description</h2>
                         <h4>{department.description}</h4>
                     </div>
-                    <div className={`${styles.dptMembers} ${styles.dptOther}`}>
+                    <div className={`${styles.textContainer} ${styles.dptMembers} ${styles.dptOther}`}>
                         <h2>Members</h2>
                         <h4 className={styles.dptMembersName}>{department.members}</h4>
                     </div>
