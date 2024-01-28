@@ -148,3 +148,41 @@
     font-size: 20px
   }
 }
+
+@media screen and (max-width: 600px) {
+  .header {
+    transform: scale(0.6);
+    margin-top: -100px;
+    gap: 50px
+  }
+  .presidents {
+    padding: 0;
+    margin-top: -300px;
+  }
+  .imageContainer {
+    transform: scale(0.75);
+  }
+  .imageContainer:hover {
+    transform: scale(0.75);
+  }
+  .presidentInfo {
+    gap: 50px;
+  }
+  .infoContainer {
+    padding:0px;
+  }
+  .description p{
+    font-size: 18px;
+    max-width: 35ch;
+  }
+  .departments {
+    margin-top: -250px;
+  }
+  .departments h1 {
+    font-size: 50px;
+  }
+  .departmentsContainer {
+    grid-template-columns: repeat(1, 300px);
+    transform: scale(.9)
+  }
+}

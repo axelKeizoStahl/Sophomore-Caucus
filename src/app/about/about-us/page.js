@@ -52,6 +52,7 @@ export default function Page() {
                   width={400}
                   height={500}
                   alt={president.name}
+                  className={styles.image}
                 />
               </div>
             ))}
@@ -59,8 +60,8 @@ export default function Page() {
           <div className={`${styles.descriptionContainer} ${styles.infoContainer}`}>
             {presidents.map((president, index) => (
               <div key={`description${index}`} className={`${styles.info} ${styles.description} ${presTop != president.name ? styles.hidden: ''}`}>
-                  <h2>{president.name}</h2>
-                  <p>{president.description}</p>
+                  <h2 className={styles.h2}>{president.name}</h2>
+                  <p className={styles.p}>{president.description}</p>
                 </div>
             ))}
           </div>

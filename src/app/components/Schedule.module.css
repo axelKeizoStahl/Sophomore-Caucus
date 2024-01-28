@@ -54,3 +54,9 @@
   display: none;
 }
 
+@media screen and (max-width: 600px) {
+  .sched {
+    transform: scale(0.65);
+    margin-bottom: 70px;
+  }
+}

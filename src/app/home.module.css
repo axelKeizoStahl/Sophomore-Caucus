@@ -181,3 +181,16 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .sched {
+    transform: scale(0.5);
+    margin-bottom: 30px;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .container {
+    top: 75px;
+  }
+};
