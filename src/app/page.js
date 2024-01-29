@@ -1,7 +1,6 @@
 "use client";
 import Timer from './components/Schedule'
 import Image from 'next/image'
-import logo from './logo.png'
 import styles from './home.module.css'
 
 export default function Home() {
@@ -10,7 +9,7 @@ export default function Home() {
       <div className={styles.header}>
         <div className={styles.container}>
           <Image
-          src={logo}
+          src='/images/logo.png'
           width={230}
           height={230}
           alt='Sophmore Caucus'

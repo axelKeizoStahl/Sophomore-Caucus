@@ -46,3 +46,21 @@
   margin-bottom: 67px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 500px) {
+  .header .title {
+    font-size: 60px;
+  }
+  .mag {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+  }
+  .mags {
+    grid-template-columns: none;;
+    gap: 10px;
+  }
+  .end_message {
+    font-size: 25px;
+  }
+};

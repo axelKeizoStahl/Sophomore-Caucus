@@ -2,9 +2,7 @@
 import styles from './events.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
-import CloseIcon from '../../images/close-button-png-30242(1).png'
 import Image from 'next/image'
-import Logo from '../../logo.png'
 
 export default function Page() {
   const [event_info_show, setEvent_info_show] = useState("0")
@@ -23,7 +21,14 @@ export default function Page() {
       <div className={styles.navbar}></div>
       <div className={`${styles.event_info} ${typeof event_info_show=="string" ? styles.hide : ""}`}>
         <div className={styles.container}>
-          <Image src={Logo} className={styles.close_button} alt="Close Icon" width="100" height="100" onClick={()=>{setEvent_info_show("0")}}/>
+          <Image
+            src='/images/logo.png'
+            width={100}
+            height={100}
+            alt="Close Icon"
+            className={styles.close_button}
+            onClick={()=>{setEvent_info_show("0")}}
+          />
           <div className={styles.info}>
             <h1>{events.length > 0 ? events[event_info_show].title : ""}</h1>
             <p>{events.length > 0 ? events[event_info_show].description : ""}</p>
@@ -36,7 +41,7 @@ export default function Page() {
           </div>
         </div>
       <div className={styles.header}>
-        <Image src={Logo} alt="Logo" width="200" height="200"/>
+        <Image src='/images/logo.png' alt="Logo" width="200" height="200"/>
         <h1 className={styles.title}>Upcoming Events</h1>
       </div>
         <Link className={styles.past_events_link} href="/news/events/past-events"><p>Past Events</p></Link>
