@@ -166,7 +166,13 @@
   .info {
     height: fit-content;
   }
+
   .events {
     grid-template-columns: repeat(1, 1fr);
   };
+
+  .header img {
+    height: 130px;
+    width: 130px;
+  }
 }

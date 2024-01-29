@@ -57,7 +57,7 @@ export default function Page() {
               </div>
             ))}
           </div>
-          <div className={`${styles.descriptionContainer} ${styles.infoContainer}`}>
+          <div className={`${presTop == "Vanna" ? styles.reverse : ''} ${styles.descriptionContainer} ${styles.infoContainer}`}>
             {presidents.map((president, index) => (
               <div key={`description${index}`} className={`${styles.info} ${styles.description} ${presTop != president.name ? styles.hidden: ''}`}>
                   <h2 className={styles.h2}>{president.name}</h2>

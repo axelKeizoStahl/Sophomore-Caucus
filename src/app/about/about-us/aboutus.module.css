@@ -129,6 +129,11 @@
   .presidentInfo {
     flex-direction: column;
   }
+
+  .reverse {
+    flex-direction: column-reverse;
+  }
+
   .infoContainer {
     align-items: center;
   }
@@ -138,12 +143,15 @@
   .presidents {
     transform: scale(0.75)
   }
+
   .departmentsContainer {
     transform: scale(0.75)
   }
+
   .departmentsContainer {
     grid-template-columns: repeat(2, 300px);
   }
+
   .description p {
     font-size: 20px
   }
@@ -152,8 +160,11 @@
 @media screen and (max-width: 600px) {
   .header {
     transform: scale(0.6);
-    margin-top: -100px;
-    gap: 50px
+    margin-top: -60px;
+    gap: 50px;
+    font-size: 80px;
+    height: 300px;
+    width: 500px;
   }
   .presidents {
     padding: 0;
@@ -161,10 +172,14 @@
   }
   .imageContainer {
     transform: scale(0.75);
+    margin-left: -100px;
   }
   .imageContainer:hover {
     transform: scale(0.75);
   }
+  .Vanna {
+    margin-left: 100px;
+  };
   .presidentInfo {
     gap: 50px;
   }
