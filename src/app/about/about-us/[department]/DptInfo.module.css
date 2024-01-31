@@ -6,9 +6,18 @@
     text-align: center;
 }
 
-.bouncingdivs {
-  position: absolute;
-};
+.back_button {
+    background-color: #404040;
+    padding: 5px 20px;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 5px;
+    z-index: 10000;
+    text-decoration: none;
+  }
 
 .dptPage h1 {
     font-size: 70px;
@@ -106,6 +115,11 @@
     transform: scale(0.75);
     margin-top: -200px;
   }
+  .back_button {
+    right: -30px;
+    top: -45px;
+  }
+
   .textContainer {
     max-width: 35ch;
     font-size: 18px;

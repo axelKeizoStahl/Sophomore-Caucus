@@ -25,6 +25,8 @@ export default function Page() {
       photo: "../../images/",},
     {department: "Internals",
       photo: "../../images/",},
+    {department: "Graphics",
+      photo: "../../images",},
     {department: "IT",
       photo: "../../images/",},
     {department: "Outreach",

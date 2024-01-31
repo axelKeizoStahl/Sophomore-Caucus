@@ -1,5 +1,6 @@
 import styles from './DptInfo.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Page({ params }) {
     const department_info = {
@@ -45,6 +46,7 @@ export default function Page({ params }) {
     const department_name = params.department[0].toUpperCase() + params.department.slice(1)
     return (
         <div className={styles.dptPage}>
+            <Link className={styles.back_button} href="/about/about-us">Back</Link>
             <h1>{"Department of " + department_name}</h1>
             <div>
                 <div className={styles.dptLeader}>
